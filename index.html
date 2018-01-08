@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DICE game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen"
+        href="main.css" />
+
+</head>
+
+<body>
+    <main>
+        <div class="wrapper clearfix">
+            <div class="player-panel Active">
+                <div class="player-name" id="player-0-name">Player 1</div>
+                <div class="player-score" id="player-0-score">75</div>
+                <div class="current-box">
+                    <div class="current-score-label">score</div>
+                    <div class="current-score" id="current-0">0</div>
+                </div>
+            </div>
+            <div class="player-panel">
+                <div class="player-name" id="player-1-name">Player 2</div>
+                <div class="player-score" id="player-1-score">25</div>
+                <div class="current-box">
+                    <div class="current-score-label">score</div>
+                    <div class="current-score" id="current-1">0</div>
+                </div>
+            </div>
+            <div class="btn" id="new-game">New Game</div>
+            <div class="btn" id="diceRoll">Roll</div>
+            <div class="btn" id="hold">Hold</div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

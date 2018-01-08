@@ -1,0 +1,91 @@
+
+        /********************************
+        *                               *
+        *           Game Styles         *
+        *                               *
+        ********************************/
+
+    /* browser resets */
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+main {
+    background-color: blueviolet;
+}
+
+.wrapper {
+    margin: 10px auto;
+    padding: 20px;
+}
+
+.player-panel {
+    width: 320px;
+    margin: 5px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid grey;
+    border-radius: 5px;
+    background-color: ghostwhite;
+}
+
+.player-name {
+    display: block;
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 1.5rem;
+}
+
+.player-score {
+    display: block;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.5rem
+}
+
+.current-box {
+    margin: 20px auto;
+    padding: 10px;
+    /* position: relative;
+    top: 10px; */
+    border: 1px solid grey;
+    border-radius: 5px;
+    width: 120px;
+    color: ghostwhite;
+    background-color: rebeccapurple;
+}
+
+.current-score-label {
+    display: block;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.current-score {
+    display: block;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.btn {
+    margin: 5px;
+    display: block;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+    border: 1px solid gray;
+    cursor: pointer;
+    background-color: ghostwhite;
+}
+
+.Active {
+    color: red;
+    font-weight: bold;
+}
