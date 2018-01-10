@@ -1,4 +1,3 @@
-     
         /****************************
         *         GAME LOGIC        * 
         ****************************/
@@ -13,10 +12,16 @@ score = [0,0];
 roundScore = 0;
 activePlayer = 0;
 
-var x = document.querySelector('#score-0').textContent;
-console.log(x);
-
+// Hide the dice image
 document.querySelector('.dice').style.display = 'none';
+
+// Reset player scores to 0 at the begining of a round
+document.getElementById('score-0').textContent = '0';
+document.getElementById('score-1').textContent = '0';
+
+// Reset current scores to 0 at the begining of a round
+document.getElementById('current-0').textContent = '0';
+document.getElementById('current-1').textContent = '0';
 
 // let player = document.querySelector('#current-' + activePlayer);
 
@@ -30,43 +35,22 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     diceDOM.style.display = 'block';
     diceDOM.src = 'assets/dice-' + dice + '.png';
 
-    //3. Update thr round score IF the rolled number was not 1
-    if(dice !== 1){
+    //3. Update the round score IF the rolled number was not 1
+    if (dice > 1) {
+        // Add score
         roundScore += dice;
-        score[0] += roundScore;
-        document.getElementById('score-' + activePlayer).textContent = roundScore;
-    console.log(roundScore);
+        document.querySelector('#current-' + activePlayer).textContent = roundScore;
+    } else {
+        // Next player
+        activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+        roundScore = 0;
+        // Reset round scores UI
+        document.getElementById('current-0').textContent = 0;
+        document.getElementById('current-1').textContent = 0;
+        // Toggle active player UI
+        document.querySelector('.player-0-panel').classList.toggle('active');
+        document.querySelector('.player-1-panel').classList.toggle('active');
+
+        document.querySelector('.dice').style.display = 'none';
     }
 });
-
-// init();
-// play();
-// newGame();
-// console.log(dice);
-
-// function newGame() {
-//     document.getElementById('new-game').addEventListener("click", init);
-// }
-
-// function play() {
-//     document.getElementById('diceRoll').addEventListener("click", function() {
-//         // update player score
-//         current1.textContent = dice;
-//         roundScore += dice;
-//         console.log(roundScore);
-//     });
-// }
- 
-// function init() {
-//     score = [0,0];
-//     roundScore = 0;
-//     activePlayer = 0;
-
-//     // Reset player score card.
-//     player1Score.textContent = 0;
-//     player2Score.textContent = 0;
-
-//     // Reset current score card.
-//     current0.textContent = 0;
-//     current1.textContent = 0;
-// }
