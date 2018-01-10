@@ -1,9 +1,7 @@
      
-        /*****************************
-        *                           *
-        *         GAME LOGIC        *
-        *                           *
-        *****************************/
+        /****************************
+        *         GAME LOGIC        * 
+        ****************************/
 
     // Players take turns to roll the dice
     // The player who reaches a score of 25 is the winner.
@@ -33,8 +31,12 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     diceDOM.src = 'assets/dice-' + dice + '.png';
 
     //3. Update thr round score IF the rolled number was not 1
-    document.getElementById('score-0').textContent = dice;
-    console.log(x);
+    if(dice !== 1){
+        roundScore += dice;
+        score[0] += roundScore;
+        document.getElementById('score-' + activePlayer).textContent = roundScore;
+    console.log(roundScore);
+    }
 });
 
 // init();
