@@ -27,7 +27,7 @@ body {
     background-position: center;
     position: relative;
     height: 100vh;
-    font-family: Lato;
+    font-family: Lato, sans-serif;
     font-weight: 300;
     color: #555;
 }
@@ -138,31 +138,33 @@ button {
     color: #555;
     background: none;
     border: none;
-    font-family: 'Lucida Sans';
+    font-family: 'Lato', sans-serif;
     font-size: 20px;
     text-transform: uppercase;
     cursor: pointer;
-    font-weight: 300;
+    font-weight: 100;
     transition: background-color 0.3s, color 0.3s;
+    /* outline: none; */
 }
 
-button::hover {
+button:hover {
     font-weight: 600;
 }
 
-button::hover i {
+button:hover i {
     margin-right: 20px;
 }
 
-button::focus {
+button:focus {
     outline: none;
 }
 
 i {
-    color: #EB4D4D;
+    /* color: #EB4D4D; */
     display: inline-block;
     margin-right: 15px;
-    font-size: 32px;
+    font-size: 24px;
+    font-weight: 200;
     line-height: 1;
     vertical-align: text-top;
     margin-top: -4px;
