@@ -8,20 +8,7 @@
 // Initializations
 let score, roundScore, activePlayer;
 
-score = [0, 0];
-roundScore = 0;
-activePlayer = 0;
-
-// Hide the dice image
-document.querySelector('.dice').style.display = 'none';
-
-// Reset player scores to 0 at the begining of a round
-document.getElementById('score-0').textContent = '0';
-document.getElementById('score-1').textContent = '0';
-
-// Reset current scores to 0 at the begining of a round
-document.getElementById('current-0').textContent = '0';
-document.getElementById('current-1').textContent = '0';
+init();
 
 // let player = document.querySelector('#current-' + activePlayer);
 
@@ -49,10 +36,10 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
     // Hold the players current score
     score[activePlayer] += roundScore;
     // console.log(score[activePlayer]);
-    
+
     // Update the UI
     document.getElementById('score-' + activePlayer).textContent = score[activePlayer];
-    
+
     // Check if player has won the game
     if (score[activePlayer] >= 20) {
         document.getElementById('player-' + activePlayer + '-name').textContent = 'Winner!';
@@ -67,6 +54,8 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
     }
 });
 
+document.querySelector('.btn-new').addEventListener('click', init);
+
 function nextPlayer() {
     // Next player
     activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
@@ -79,4 +68,34 @@ function nextPlayer() {
     document.querySelector('.player-1-panel').classList.toggle('active');
 
     document.querySelector('.dice').style.display = 'none';
+}
+
+function init() {
+    score = [0, 0];
+    roundScore = 0;
+    activePlayer = 0;
+
+    // Hide the dice image
+    document.querySelector('.dice').style.display = 'none';
+
+    // Reset player scores to 0 at the begining of a round
+    document.getElementById('score-0').textContent = '0';
+    document.getElementById('score-1').textContent = '0';
+
+    // Reset current scores to 0 at the begining of a round
+    document.getElementById('current-0').textContent = '0';
+    document.getElementById('current-1').textContent = '0';
+
+    // Reset player names
+    document.getElementById('player-0').textContent = 'Player 1';
+    document.getElementById('player-1').textContent = 'Player 2';
+
+    // Reset player UI
+    document.querySelector('player-0-panel').classList.remove('winner');
+    document.querySelector('player-1-panel').classList.remove('winner');
+
+    document.querySelector('player-0-panel').classList.remove('active');
+    document.querySelector('player-1-panel').classList.remove('active');
+
+    document.querySelector('player-0-panel').classList.add('active');
 }
