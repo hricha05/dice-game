@@ -33,6 +33,8 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     diceDOM.src = 'assets/dice-' + dice + '.png';
 
     //3. Update thr round score IF the rolled number was not 1
+    document.getElementById('score-0').textContent = dice;
+    console.log(x);
 });
 
 // init();
